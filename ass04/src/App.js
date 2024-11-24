@@ -1,5 +1,6 @@
 
 import './App.css';
+import AnimalTable from './components/AnimalTable';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <tbody>
           <tr>
             <td>
-
+            <AnimalTable/>
             </td>
           </tr>
         </tbody>

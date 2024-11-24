@@ -3,7 +3,7 @@ import {animals} from '../data/AnimalsDb';
 import '../assests/css/compo.css';
 
 function AnimalTable(props){
-    const [randomAnimal,setRandomAimal]=useState(null);
+    const [randomAnimal,setRandomAnimal]=useState(null);
     const[result,setResult]=useState('');
 
 useEffect(()=>{
@@ -45,10 +45,25 @@ return(
             </thead>
             <tbody>
                 <tr>
-                    <td  className='result-col' width="10%"></td>
+                    <td  className='result-col' width="10%">
+                    <h2>{result}</h2></td>
+                    <td className='animalname-col' width="20%">
+                        <h2>{randomAnimal.name.toUpperCase()}</h2></td>
+                       <td className='animalgrid-col' width="70%">
+                        <div>
+                            <div className='animalgrid'>
+                                {animals.map((animal)=>(
+                                    <div key={animal.name} className='animalgrid-item' onClick={()=>handleAnimalClick(animal.name)}>
+                                        <img src={require(`../assests/img/${animal.img}`)} alt={animal.name} className='animal-image'/>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        </td> 
                 </tr>
             </tbody>
         </table>
     </div>
 )
 }
+export default AnimalTable
