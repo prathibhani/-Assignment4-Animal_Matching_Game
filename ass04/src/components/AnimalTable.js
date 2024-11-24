@@ -15,5 +15,13 @@ const generateRandomAnimal =()=>{
     setRandomAnimal(animals[randomIndex]);
     setResult('');
 }
+const handleAnimalClick=(selectedAnimal)=>{
+  if(selectedAnimal === randomAnimal.name){
+    setResult('WIN');
+  }  else{
+    setResult('LOSE');
+  }
+
+}
 
 }
