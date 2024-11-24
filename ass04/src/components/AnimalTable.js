@@ -21,7 +21,34 @@ const handleAnimalClick=(selectedAnimal)=>{
   }  else{
     setResult('LOSE');
   }
+    setTimeout(()=>{
+        generateRandomAnimal();
+    },1000);
+};
+if (!randomAnimal){
+    return <div className="loading">Loading...</div>
 
 }
+return(
+    <div className='gameContainer'>
+        <table className='game-table'>
+            <thead>
+                <tr>
+                    <th colSpan="3"><h2>Animal Matching Game</h2></th>
+                </tr>
+                <tr>
+                    <th><h3>Result</h3></th>
+                    <th><h3>Animal Name</h3></th>
+                    <th><h3>Select the Animal</h3></th>
 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td  className='result-col' width="10%"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+)
 }
